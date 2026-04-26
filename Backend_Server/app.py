@@ -2,13 +2,14 @@ from flask import Flask, request, jsonify
 from pymongo import MongoClient
 from flask_cors import CORS
 import datetime
+import os
 
 # 1. Initialize the Flask Web Server
 app = Flask(__name__)
 CORS(app)  # This will allow requests from any origin
 
 # 2. Connect to MongoDB Atlas (CHANGE THIS STRING!)
-MONGO_URI = "mongodb+srv://lakshansandun545:sandun1234@cluster0.j1iolwu.mongodb.net/Items_db?"
+MONGO_URI = os.environ.get("MONGO_URI")
 client = MongoClient(MONGO_URI)
 
 # 3. Select the Database and Collection (Table)
