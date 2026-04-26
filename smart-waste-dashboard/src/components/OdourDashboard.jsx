@@ -11,7 +11,7 @@ const OdourDashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/data');
+        const response = await fetch('https://smart-waste-io-t-w6cn.vercel.app/api/data');
         const data = await response.json();
         
         if (data && data.length > 0) {
